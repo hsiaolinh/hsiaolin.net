@@ -1,0 +1,25 @@
+{
+  "name": "hsiaolin.net",
+  "type": "module",
+  "version": "1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@astrojs/image": "^0.15.1",
+    "@astrojs/mdx": "^0.17.2",
+    "@astrojs/rss": "^2.1.1",
+    "@astrojs/sitemap": "^1.1.0",
+    "astro": "^2.0.17",
+    "autoprefixer": "^10.4.13",
+    "postcss-nested": "^6.0.1",
+    "prettier-plugin-astro": "^0.8.0",
+    "sharp": "^0.31.3"
+  }
+}

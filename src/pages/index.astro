@@ -1,0 +1,196 @@
+---
+import { Picture } from "@astrojs/image/components";
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+import profileImg from "@img/Hsiaolin_Hsieh.jpeg";
+import hearMyNameImg from "@img/hear_my_name.png";
+
+import email from "@icons/email.svg?raw";
+import orcid from "@icons/orcid.svg?raw";
+import linkedin from "@icons/linkedin.svg?raw";
+
+const title = "Hsiaolin Hsieh";
+const description =
+  "Hsiaolin Hsieh is an educational researcher who uses data science to investigate issues relating to equity for multi-lingual learners.";
+---
+
+<BaseLayout title={title} description={description}>
+  <article>
+    <h1>Hsiaolin Hsieh</h1>
+    <div class="name">
+      謝筱琳
+      <a href="https://www.name-coach.com/hsiaolin-hsieh">
+        <Picture
+          src={hearMyNameImg}
+          alt="Hear My Name"
+          widths={[136, 272]}
+          sizes="136px"
+          loading="eager"
+          width={136}
+          height={40}
+        />
+      </a>
+    </div>
+    <aside>
+      <Picture
+        src={profileImg}
+        alt="Hsiaolin Hsieh Profile Image"
+        widths={[250, 350, 500, 700]}
+        sizes="(max-width: 1200px) 250px, 350px"
+        loading="eager"
+        width={350}
+        height={463}
+      />
+      <a
+        href="mailto:hsiaolin.hsieh@gmail.com"
+        target="_blank"
+        aria-label="Email Hsiaolin"
+      >
+        <Fragment set:html={email} />
+      </a>
+      <a
+        href="https://orcid.org/0000-0002-1930-4026"
+        target="_blank"
+        aria-label="ORCID for Hsiaolin Hsieh: 0000-0002-1930-4026"
+      >
+        <Fragment set:html={orcid} />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/hsiaolin"
+        target="_blank"
+        aria-label="LinkedIn Profile for Hsiaolin Hsieh"
+      >
+        <Fragment set:html={linkedin} />
+      </a>
+    </aside>
+    <p>
+      Hsiaolin Hsieh is a doctoral candidate at the Stanford Graduate School of
+      Education in the Developmental and Psychological Sciences program. Her
+      research agenda focuses on how to facilitate equitable opportunities and
+      access to learning for multilingual learners. Her training in educational
+      measurement and assessment allows her to critically examine the design,
+      implementation, evaluations, and interpretation of tests used in the K-12
+      context. Her experience in quasi-experimental research supporting upper
+      elementary students’ literacy skills and reading comprehension equips her
+      knowledge and skills with large-scale data collection and analysis.
+    </p>
+    <p>
+      Hsiaolin’s dissertation is centered on the assessments of student talk in
+      classrooms. She uses mixed-method approaches, integrating qualitative
+      procedures (e.g., interviews, think-alouds, manual coding, and classroom
+      observations) and quantitative techniques (e.g., statistical modeling,
+      natural language processing, and machine learning algorithms) to yield
+      research findings and to present those findings using clear and creative
+      graphical representations.
+    </p>
+    <p>
+      Hsiaolin is enthusiastic about supporting teaching and learning through
+      research-practice partnerships and rigorous research. She is a passionate
+      advocate of students’ dialogic participation at school. She has experience
+      working with stakeholders in local educational systems, including
+      teachers, instructional coaches, and school and district administrators,
+      as well as with philanthropic foundations. Hsiaolin is also interested in
+      examining how educational technology can be leveraged to assist student
+      learning.
+    </p>
+  </article>
+
+  <style>
+    h1 {
+      margin-bottom: 0;
+    }
+
+    .name {
+      align-items: center;
+      display: flex;
+      font-size: 2.6em;
+      gap: 0.5em;
+
+      a {
+        display: flex;
+      }
+
+      :global(picture) {
+        display: flex;
+      }
+
+      img {
+        filter: grayscale();
+        transition: filter 200ms ease;
+
+        &:hover {
+          filter: none;
+        }
+      }
+    }
+
+    aside {
+      margin: 0 0 0 1em;
+      text-align: center;
+      float: right;
+
+      a {
+        text-decoration: none;
+      }
+
+      :global(picture) {
+        display: block;
+        min-height: 250px;
+      }
+
+      img {
+        max-width: 350px;
+        margin-bottom: 1em;
+        border-radius: 0px;
+        border-radius: 50%;
+        margin-top: -50px;
+        outline: 1px solid var(--text-main);
+      }
+
+      :global(svg) {
+        height: 48px;
+        width: 48px;
+        margin: 0 1em;
+
+        filter: grayscale();
+        transition: filter 200ms ease;
+
+        &:hover {
+          filter: none;
+        }
+      }
+    }
+
+    @media (max-width: 1200px) {
+      aside img {
+        max-width: 250px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .name {
+        justify-content: center;
+      }
+      aside {
+        float: none;
+        margin: 0;
+      }
+
+      aside img {
+        margin-top: 0;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .name {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 0.5em;
+      }
+
+      aside {
+        margin-bottom: 2em;
+      }
+    }
+  </style>
+</BaseLayout>

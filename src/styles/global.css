@@ -1,0 +1,131 @@
+:root {
+  --background-body: #fff;
+  --container-width: clamp(900px, 1400px, 80vw);
+  --container-width-fallback: 1400px;
+  --font-family-sans: sans-serif;
+  --font-family-serif: Merriweather, "Source Han Serif TW", serif;
+  --primary-color: #548e9b;
+  --text-main: #36393b;
+  --text-secondary: #6b6f72;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--primary-color);
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-serif);
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--background-body);
+  color: var(--text-main);
+}
+
+/* add margin if scroll bar not visible
+   Note: leaving space for a scroll bar can result in obviously uneven margins
+   on smaller screens when there is no scroll bar.  This is potentially an issue
+   on environments without overlay scrollbars and very narrow viewports, but 
+   such environments are very uncommon and in my contrived examples behaviour
+   is entirely acceptable imo. */
+body {
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-sans);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 0.5em 0;
+}
+
+h1 {
+  font-family: var(--font-family-serif);
+  font-size: 3em;
+  margin: 0 0 1em 0;
+}
+
+h2 {
+  margin: 1.6em 0 0 0;
+  font-size: 1.8em;
+}
+
+a {
+  color: inherit;
+  transition: color linear 0.15s;
+
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
+p {
+  font-size: 1.3rem;
+  line-height: 1.75em;
+  margin: 1.2em 0;
+
+  a {
+    box-shadow: inset 0 -0.12em 0 var(--primary-color);
+    text-decoration: none;
+    transition: box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    &:hover {
+      box-shadow: inset 0 -1.5em 0 var(--primary-color);
+      color: #fff;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  padding: 0;
+  border: 0;
+  height: 10px;
+  margin: 40px auto;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='20' height='10'  viewBox='0 0 20 10' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-miterlimit='10'%3e%3cpath fill='none' d='M0 0h20v10H0z'/%3e%3cclipPath id='a'%3e%3cpath d='M0 0h20v10H0z'/%3e%3c/clipPath%3e%3cg clip-path='url(%23a)'%3e%3cpath d='M20 7.384c-4.999-.001-5-4.768-9.999-4.768C5 2.616 5 7.384 0 7.384' fill='none' stroke-width='3' stroke='%23548E9B'/%3e%3c/g%3e%3c/svg%3e");
+}
+
+@media (max-width: 1200px) {
+  p {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2.6em;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin: 1em 0;
+  }
+}

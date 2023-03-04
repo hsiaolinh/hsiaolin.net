@@ -1,0 +1,15 @@
+{
+  "cSpell.words": [
+    "Chengchi",
+    "grayscale",
+    "Hsiaolin",
+    "Hsieh",
+    "orcid",
+    "Sinica",
+    "Xinzhu"
+  ],
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

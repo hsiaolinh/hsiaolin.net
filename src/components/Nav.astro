@@ -1,0 +1,67 @@
+---
+const pathname = Astro.url.pathname;
+const base = import.meta.env.BASE_URL;
+---
+
+<style>
+  nav {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    font-family: var(--font-family-sans);
+    font-weight: 700;
+    gap: 1em;
+    justify-content: flex-end;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: inherit;
+    display: block;
+    min-width: 70px;
+    padding: 8px 4px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+
+    &:not(.selected) {
+      opacity: 0.7;
+    }
+
+    &::before {
+      background: var(--text-secondary);
+      bottom: 0;
+      content: "";
+      height: 2px;
+      left: 0;
+      position: absolute;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      width: 100%;
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+  }
+
+  .selected::before {
+    background: var(--primary-color);
+    transform: scaleX(1);
+  }
+
+  @media (max-width: 400px) {
+    nav {
+      justify-content: center;
+    }
+  }
+</style>
+
+<nav>
+  <a class={pathname === base ? "selected" : null} href="/">home</a>
+  <a class={pathname === base + "bio" ? "selected" : null} href="/bio">Bio</a>
+  <a
+    class={pathname === base + "cv" ? "selected" : null}
+    href="/hsiaolin_hsieh.pdf">CV</a
+  >
+</nav>
