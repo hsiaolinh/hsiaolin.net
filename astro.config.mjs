@@ -3,6 +3,8 @@ import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
+import { ogImageGenerator } from "./integrations/og-image-generator.ts";
+
 export default defineConfig({
   site: "https://hsiaolin.net/",
   trailingSlash: "always",
@@ -12,5 +14,6 @@ export default defineConfig({
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
+    ogImageGenerator(),
   ],
 });

@@ -4,7 +4,18 @@ import { execSync } from "node:child_process";
 import "@styles/fonts.css";
 import "@styles/global.css";
 
-import openGraphImg from "@img/open-graph.jpeg?url";
+let openGraphImage = "";
+try {
+  ({ default: openGraphImage } = await import(
+    "../../assets/open-graph.jpeg?url"
+  ));
+} catch (err) {
+  if (import.meta.env.PROD) {
+    // if the open-graph image is not available in PROD, throw an error
+    // (see integrations/memewall-og-image.ts)
+    throw err;
+  }
+}
 
 export interface Props {
   title: string;
@@ -52,14 +63,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={openGraphImg} />
+  <meta property="og:image" content={openGraphImage} />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content={canonicalURL} />
   <meta property="twitter:title" content={title} />
   <meta property="twitter:description" content={description} />
-  <meta property="twitter:image" content={openGraphImg} />
+  <meta property="twitter:image" content={openGraphImage} />
 
   <meta name="version" content={commit} />
   <meta name="dcterms.modified" content={datetime} />
