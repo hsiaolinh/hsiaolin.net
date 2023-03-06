@@ -58,10 +58,12 @@ const base = import.meta.env.BASE_URL;
 </style>
 
 <nav>
-  <a class={pathname === base ? "selected" : null} href="/">home</a>
-  <a class={pathname === base + "bio" ? "selected" : null} href="/bio">Bio</a>
+  <a class={pathname === base ? "selected" : null} href={base}>home</a>
+  <a class={pathname === base + "bio/" ? "selected" : null} href={`${base}bio/`}
+    >Bio</a
+  >
   <a
-    class={pathname === base + "cv" ? "selected" : null}
-    href="/hsiaolin_hsieh.pdf">CV</a
+    class={pathname === base + "cv/" ? "selected" : null}
+    href={`${base}hsiaolin_hsieh.pdf`}>CV</a
   >
 </nav>
