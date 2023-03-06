@@ -192,5 +192,15 @@ const description =
         margin-bottom: 2em;
       }
     }
+
+    @media (hover: none) {
+      .name img {
+        filter: none;
+      }
+
+      aside :global(svg) {
+        filter: none;
+      }
+    }
   </style>
 </BaseLayout>
