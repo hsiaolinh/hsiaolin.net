@@ -9,8 +9,14 @@ import Nav from "@components/Nav.astro";
     margin: 0 auto;
     max-width: var(--container-width-fallback);
     max-width: var(--container-width);
-    padding: 2em;
+    padding: 2em 2em 1em;
     width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    header {
+      padding: 2em;
+    }
   }
 </style>
 
