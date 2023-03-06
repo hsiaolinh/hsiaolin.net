@@ -19,7 +19,10 @@ const description =
     <h1>Hsiaolin Hsieh <span class="pronouns">(she/her)</span></h1>
     <div class="name">
       謝筱琳
-      <a href="https://www.name-coach.com/hsiaolin-hsieh">
+      <a
+        href="https://www.name-coach.com/hsiaolin-hsieh"
+        class="saturate-on-hover"
+      >
         <Picture
           src={hearMyNameImg}
           alt="Hear My Name"
@@ -45,6 +48,7 @@ const description =
         href="mailto:hsiaolin.hsieh@gmail.com"
         target="_blank"
         aria-label="Email Hsiaolin"
+        class="saturate-on-hover"
       >
         <Fragment set:html={email} />
       </a>
@@ -52,6 +56,7 @@ const description =
         href="https://orcid.org/0000-0002-1930-4026"
         target="_blank"
         aria-label="ORCID for Hsiaolin Hsieh: 0000-0002-1930-4026"
+        class="saturate-on-hover"
       >
         <Fragment set:html={orcid} />
       </a>
@@ -59,6 +64,7 @@ const description =
         href="https://www.linkedin.com/in/hsiaolin"
         target="_blank"
         aria-label="LinkedIn Profile for Hsiaolin Hsieh"
+        class="saturate-on-hover"
       >
         <Fragment set:html={linkedin} />
       </a>
@@ -109,15 +115,6 @@ const description =
       & :global(picture) {
         display: flex;
       }
-
-      & img {
-        filter: grayscale();
-        transition: filter 200ms ease;
-
-        &:hover {
-          filter: none;
-        }
-      }
     }
 
     aside {
@@ -147,13 +144,6 @@ const description =
         height: 48px;
         width: 48px;
         margin: 0 1em;
-
-        filter: grayscale();
-        transition: filter 200ms ease;
-
-        &:hover {
-          filter: none;
-        }
       }
     }
 
@@ -192,16 +182,6 @@ const description =
 
       aside {
         margin-bottom: 2em;
-      }
-    }
-
-    @media (hover: none) {
-      .name img {
-        filter: none;
-      }
-
-      aside :global(svg) {
-        filter: none;
       }
     }
   </style>
