@@ -90,7 +90,7 @@ const description =
     h1 {
       margin-bottom: 0;
 
-      .pronouns {
+      & .pronouns {
         font-weight: normal;
         font-size: 1rem;
       }
@@ -102,15 +102,15 @@ const description =
       font-size: 2.6em;
       gap: 0.5em;
 
-      a {
+      & a {
         display: flex;
       }
 
-      :global(picture) {
+      & :global(picture) {
         display: flex;
       }
 
-      img {
+      & img {
         filter: grayscale();
         transition: filter 200ms ease;
 
@@ -125,16 +125,16 @@ const description =
       text-align: center;
       float: right;
 
-      a {
+      & a {
         text-decoration: none;
       }
 
-      :global(picture) {
+      & :global(picture) {
         display: block;
         min-height: 250px;
       }
 
-      img {
+      & img {
         max-width: 350px;
         margin-bottom: 1em;
         border-radius: 0px;
@@ -143,7 +143,7 @@ const description =
         outline: 1px solid var(--text-main);
       }
 
-      :global(svg) {
+      & :global(svg) {
         height: 48px;
         width: 48px;
         margin: 0 1em;
@@ -168,9 +168,11 @@ const description =
         display: flex;
         flex-direction: column;
       }
+
       .name {
         justify-content: center;
       }
+
       aside {
         float: none;
         margin: 0;
