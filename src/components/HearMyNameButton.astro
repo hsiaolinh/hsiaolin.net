@@ -1,0 +1,16 @@
+---
+import { Picture } from "@astrojs/image/components";
+import hearMyNameImg from "@img/hear_my_name.png";
+---
+
+<a href="https://www.name-coach.com/hsiaolin-hsieh" class="saturate-on-hover">
+  <Picture
+    src={hearMyNameImg}
+    alt="Hear My Name"
+    widths={[136, 272]}
+    sizes="136px"
+    loading="eager"
+    width={136}
+    height={40}
+  />
+</a>

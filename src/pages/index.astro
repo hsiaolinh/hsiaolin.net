@@ -1,9 +1,9 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import HearMyNameButton from "@components/HearMyNameButton.astro";
 
 import profileImg from "@img/Hsiaolin_Hsieh.jpeg";
-import hearMyNameImg from "@img/hear_my_name.png";
 
 import email from "@icons/email.svg?raw";
 import orcid from "@icons/orcid.svg?raw";
@@ -19,20 +19,7 @@ const description =
     <h1>Hsiaolin Hsieh <span class="pronouns">(she/her)</span></h1>
     <div class="name">
       謝筱琳
-      <a
-        href="https://www.name-coach.com/hsiaolin-hsieh"
-        class="saturate-on-hover"
-      >
-        <Picture
-          src={hearMyNameImg}
-          alt="Hear My Name"
-          widths={[136, 272]}
-          sizes="136px"
-          loading="eager"
-          width={136}
-          height={40}
-        />
-      </a>
+      <HearMyNameButton />
     </div>
     <aside>
       <Picture
