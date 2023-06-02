@@ -1,0 +1,41 @@
+---
+import HomeLayout from "@layouts/HomeLayout.astro";
+import Nav from "@components/Nav.astro";
+---
+
+<HomeLayout>
+  <div>
+    <h2>404</h2>
+    <!-- prettier-ignore -->
+    <p>
+      You step in the stream,
+      But the water has moved on.
+      There is no page here.
+    </p>
+    <Nav />
+  </div>
+  <div></div>
+</HomeLayout>
+
+<style>
+  div {
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+
+  h2 {
+    border-bottom: 4px double var(--text-main);
+    font-family: var(--font-family-serif);
+    font-size: 2.5rem;
+    padding-bottom: 1em;
+    text-align: center;
+    width: 4em;
+  }
+
+  p {
+    font-style: italic;
+    margin: 0 0 4em 0;
+    white-space: pre-line;
+  }
+</style>
