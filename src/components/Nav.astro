@@ -1,6 +1,14 @@
 ---
+import { glob } from "glob";
+
 const pathname = Astro.url.pathname;
 const base = import.meta.env.BASE_URL;
+
+const mostRecentCv = () => {
+  return glob
+    .sync("Hsiaolin_Hsieh-CV-*.pdf", { cwd: "./public" })
+    .sort((a, b) => b.localeCompare(a))[0];
+};
 ---
 
 <style>
@@ -64,6 +72,6 @@ const base = import.meta.env.BASE_URL;
   >
   <a
     class={pathname === base + "cv/" ? "selected" : null}
-    href={`${base}Hsiaolin_Hsieh-CV-2023-05-12.pdf`}>CV</a
+    href={`${base}${mostRecentCv()}`}>CV</a
   >
 </nav>
