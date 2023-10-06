@@ -12,15 +12,14 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.18.0",
-    "@astrojs/mdx": "^0.19.7",
-    "@astrojs/rss": "^2.4.4",
-    "@astrojs/sitemap": "^1.4.0",
-    "astro": "^2.10.15",
+    "@astrojs/mdx": "^1.1.1",
+    "@astrojs/rss": "^3.0.0",
+    "@astrojs/sitemap": "^3.0.1",
+    "astro": "^3.2.3",
     "glob": "^10.3.10",
     "p-event": "^6.0.0",
     "playwright": "^1.38.1",
-    "postcss-preset-env": "^8.5.1",
+    "postcss-preset-env": "^9.1.4",
     "prettier-plugin-astro": "^0.12.0",
     "sharp": "^0.32.6"
   }
