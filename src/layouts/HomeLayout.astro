@@ -1,6 +1,7 @@
 ---
-import { Picture } from "@astrojs/image/components";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Picture from "@components/Picture.astro";
+
 import HearMyNameButton from "@components/HearMyNameButton.astro";
 
 import profileImg from "@img/Hsiaolin_Hsieh.jpeg";
@@ -107,7 +108,7 @@ const { title = defaultTitle, description = defaultDescription } = Astro.props;
         min-height: 250px;
       }
 
-      & img {
+      & :global(img) {
         max-width: 350px;
         margin-bottom: 1em;
         border-radius: 0px;
