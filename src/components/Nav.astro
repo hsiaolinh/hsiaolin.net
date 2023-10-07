@@ -72,6 +72,10 @@ const mostRecentCv = () => {
     href={`${base}about-me/`}>About Me</a
   >
   <a
+    class={pathname === base + "research/" ? "selected" : null}
+    href={`${base}research/`}>Research</a
+  >
+  <a
     class={pathname === base + "cv/" ? "selected" : null}
     href={`${base}${mostRecentCv()}`}>CV</a
   >
