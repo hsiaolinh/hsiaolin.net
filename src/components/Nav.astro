@@ -26,7 +26,6 @@ const mostRecentCv = () => {
   a {
     color: inherit;
     display: block;
-    min-width: 70px;
     padding: 8px 4px;
     position: relative;
     text-align: center;
@@ -68,12 +67,12 @@ const mostRecentCv = () => {
 <nav>
   <a class={pathname === base ? "selected" : null} href={base}>home</a>
   <a
-    class={pathname === base + "about-me/" ? "selected" : null}
-    href={`${base}about-me/`}>About Me</a
-  >
-  <a
     class={pathname === base + "research/" ? "selected" : null}
     href={`${base}research/`}>Research</a
+  >
+  <a
+    class={pathname === base + "about-me/" ? "selected" : null}
+    href={`${base}about-me/`}>About Me</a
   >
   <a
     class={pathname === base + "cv/" ? "selected" : null}
