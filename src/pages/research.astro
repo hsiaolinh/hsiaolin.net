@@ -9,7 +9,7 @@ const description = "Research Activities of Hsiaolin Hsieh.";
   <article>
     <h1>Research</h1>
 
-    <h2>Publications in Peer-Reviewed Journals</h2>
+    <h2>Publications in Peer&#8209;Reviewed Journals</h2>
     <ol>
       <li>
         Levine, S., <strong>Hsieh, H.</strong>, Southerton, E., & Silverman, R.
@@ -152,11 +152,25 @@ const description = "Research Activities of Hsiaolin Hsieh.";
     text-decoration: none;
   }
 
-  em a {
-    margin: 0;
-  }
-
   a:hover {
     border-bottom-width: 1px;
+  }
+
+  em::before {
+    content: "\200B"; /* ensure line-breaking before <em/> is possible */
+  }
+
+  @media (max-width: 767px) {
+    h2 {
+      text-align: center;
+    }
+
+    ol {
+      margin: 2rem 0;
+    }
+
+    li {
+      font-size: 1rem;
+    }
   }
 </style>
