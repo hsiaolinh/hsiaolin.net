@@ -1,5 +1,9 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Picture from "@components/Picture.astro";
+
+import familyImg from "@img/Hsiaolin_Family.jpeg";
+import diandianImg from "@img/Diandian.jpeg";
 
 const title = "Hsiaolin Hsieh :: About Me";
 const description = "Short biography of Hsiaolin Hsieh.";
@@ -46,5 +50,49 @@ const description = "Short biography of Hsiaolin Hsieh.";
       leopard gecko named Diandian. I love crocheting, oil painting, and hiking
       in my leisure time.
     </p>
+
+    <div>
+      <Picture
+        src={familyImg}
+        alt="Hsiaolin Hsieh and Family"
+        widths={[500, 100]}
+        sizes="500px"
+        loading="eager"
+        width={500}
+        height={375}
+      />
+
+      <Picture
+        src={diandianImg}
+        alt="Diandian the Leopard Gecko"
+        widths={[281, 562]}
+        sizes="281px"
+        loading="eager"
+        width={281}
+        height={375}
+      />
+    </div>
   </article>
 </BaseLayout>
+
+<style>
+  article :global(picture) {
+    display: block;
+    width: fit-content;
+  }
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+    margin: 6rem 0 4rem;
+
+    :global(img) {
+      border-radius: 4px;
+      max-height: 375px;
+      outline-offset: 4px;
+      outline: 2px solid var(--primary-color);
+    }
+  }
+</style>
