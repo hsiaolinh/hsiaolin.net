@@ -3,7 +3,7 @@ import Picture from "@components/Picture.astro";
 import hearMyNameImg from "@img/hear_my_name.png";
 ---
 
-<a href="https://www.name-coach.com/hsiaolin-hsieh" class="saturate-on-hover">
+<a id="hear-my-name" href="/hsiaolin_hsieh.mp3" class="saturate-on-hover">
   <Picture
     src={hearMyNameImg}
     alt="Hear My Name"
@@ -14,3 +14,14 @@ import hearMyNameImg from "@img/hear_my_name.png";
     height={40}
   />
 </a>
+
+<script>
+  const hearMyNameLink = document.getElementById(
+    "hear-my-name",
+  ) as HTMLLinkElement;
+  hearMyNameLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    const audio = new Audio(hearMyNameLink.href);
+    audio.play();
+  });
+</script>
