@@ -1,0 +1,19 @@
+name: Deploy Site
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+      - name: Install Node Dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Deploy Site to GH Pages
+        run: |
+          git config user.email "hsiaolin.hsieh@gmail.com"
+          git config user.name "Hsiaolin"
+          pnpm gh-deploy
